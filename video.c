@@ -673,53 +673,52 @@ const vid_config_t vid_config_baird_30 = {
 };
 
 const vid_config_t vid_config_apollo_colour_fm = {
-	
-	/* Unified S-Band, Apollo Colour Lunar Television */
-	.output_type    = HACKTV_INT16_COMPLEX,
-	
-	.level          = 1.000, /* Overall signal level */
-	.video_level    = 0.850, /* Power level of video */
-	.fm_audio_level = 0.150, /* Power level of audio */
-	
-	.modulation     = VID_FM,
-	.fm_level       = 1.0,
-	.fm_deviation   = 1000000 / 0.850, /* kHz */
-	
-	.frame_rate_num = 30000,
-	.frame_rate_den = 1001,
-	.lines          = 525,
-	.active_lines   = 480,
-	.active_width   = 0.00005290, /* 52.90µs */
-	.active_left    = 0.00000920, /* |-->| 9.20µs */
-	
-	.hsync_width       = 0.00000470, /*  4.70 ±1.00µs */
-	.vsync_short_width = 0.00000230, /*  2.30 ±0.10µs */
-	.vsync_long_width  = 0.00002710, /* 27.10 µs */
-	
-	.white_level    =  0.5000,
-	.black_level    = -0.1475,
-	.blanking_level = -0.2000,
-	.sync_level     = -0.5000,
-	
-	.colour_mode    = VID_APOLLO_FSC,
-	.fsc_flag_width = 0.00002000, /* 20.00µs */
-	.fsc_flag_left  = 0.00001470, /* |-->| 14.70µs */
-	.fsc_flag_level = 1.00,
-	
-	.gamma          =  1.2,
-	.rw_co          =  0.299, /* R weight */
-	.gw_co          =  0.587, /* G weight */
-	.bw_co          =  0.114, /* B weight */
-	
-	/* The audio carrier overlaps the video signal and
-	 * requires the video to either be low pass filtered
-	 * to 750kHz (Apollo 10 to 14) or cancelled out
-	 * in post-processing (Apollo 15-17). */
-	
-	.fm_mono_carrier    = 1250000, /* Hz */
-	.fm_audio_deviation = 25000, /* +/- Hz */
-};
 
+        /* Unified S-Band, Apollo Colour Lunar Television */
+        .output_type    = HACKTV_INT16_COMPLEX,
+
+        .level          = 1.000, /* Overall signal level */
+        .video_level    = 1.000, /* Power level of video */
+        //.fm_audio_level = 0.150, /* Power level of audio */
+
+        .modulation     = VID_FM,
+        .fm_level       = 1.0,
+        .fm_deviation   = 125000, /* kHz */
+
+        .frame_rate_num = 30000,
+        .frame_rate_den = 1001,
+        .lines          = 525,
+        .active_lines   = 480,
+        .active_width   = 0.00005290, /* 52.90µs */
+        .active_left    = 0.00000920, /* |-->| 9.20µs */
+
+        .hsync_width       = 0.00000470, /*  4.70 ±1.00µs */
+        .vsync_short_width = 0.00000230, /*  2.30 ±0.10µs */
+        .vsync_long_width  = 0.00002710, /* 27.10 µs */
+        .white_level    =  0.5000,
+        .black_level    = -0.1475,
+        .blanking_level = -0.2000,
+        .sync_level     = -0.5000,
+
+        .colour_mode    = VID_APOLLO_FSC,
+        .fsc_flag_width = 0.00002000, /* 20.00µs */
+        .fsc_flag_left  = 0.00001470, /* |-->| 14.70µs */
+        .fsc_flag_level = 1.00,
+
+        .gamma          =  1.0,
+        .rw_co          =  0.299, /* R weight */
+        .gw_co          =  0.587, /* G weight */
+        .bw_co          =  0.114, /* B weight */
+
+        /* The audio carrier overlaps the video signal and
+         * requires the video to either be low pass filtered
+         * to 750kHz (Apollo 10 to 14) or cancelled out
+         * in post-processing (Apollo 15-17). */
+
+        //.fm_mono_carrier    = 1250000, /* Hz */
+        //.fm_audio_deviation = 25000, /* +/- Hz */
+};
+ 
 const vid_config_t vid_config_apollo_colour = {
 	
 	/* Apollo Colour Lunar Television */
@@ -799,8 +798,8 @@ const vid_config_t vid_config_apollo_mono_fm = {
 	.gw_co          = 0.587, /* G weight */
 	.bw_co          = 0.114, /* B weight */
 	
-	.fm_mono_carrier    = 1250000, /* Hz */
-	.fm_audio_deviation = 25000, /* +/- Hz */
+	.fm_mono_carrier    = 125000, /* Hz */
+	.fm_audio_deviation = 000, /* +/- Hz */
 };
 
 const vid_config_t vid_config_apollo_mono = {
